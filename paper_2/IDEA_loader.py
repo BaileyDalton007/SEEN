@@ -14,7 +14,7 @@ Args:
 Returns:
     A pandas dataframe with the loaded IDEA data
 """
-def load_dataset(file_name, skip_rows=0, null_vals=[-8, -9], column_mappings=None, drop_columns=None):
+def load_IDEA(file_name, skip_rows=0, null_vals=[-8, -9], column_mappings=None, drop_columns=None):
     file_path = 'raw_data/' + file_name
 
     # the IDEA data often has notes at the top of the CSV, drop them from the dataframe.
