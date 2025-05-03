@@ -25,7 +25,8 @@ def load_IDEA(file_name, skip_rows=0, null_vals=[-8, -9], column_mappings=None, 
 
     # drop any specified columns.
     if drop_columns:
-        df = df.drop(drop_columns, axis=1)
+        columns_to_drop = [col for col in drop_columns if col in df.columns]
+        df = df.drop(columns_to_drop, axis=1)
 
     # if given a dictionary mapping orginal column names to new ones, rename them.
     if column_mappings:
